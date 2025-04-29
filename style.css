@@ -1,0 +1,201 @@
+:root {
+  --color-primary: #f6ca3b;
+  --color-primary-dark: #2563EB;
+  --color-secondary: #10B981;
+  --color-accent: #F59E0B;
+  --color-error: #EF4444;
+  --color-background: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-text: #1F2939;
+  --color-text-light: #6B7280;
+  
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  
+  font-family: 'Poppins', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+header {
+  background-color: var(--color-surface);
+  padding: var(--spacing-md);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-primary);
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.brush-tools {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.tool-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border: 2px solid var(--color-text-light);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tool-btn:hover {
+  border-color: var(--color-primary);
+}
+
+.tool-btn.active {
+  border-color: var(--color-primary);
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.icon.circular {
+  border-radius: 50%;
+  background-color: var(--color-text);
+}
+
+.icon.square {
+  border-radius: 2px;
+  background-color: var(--color-text);
+}
+
+.brush-settings {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+}
+
+.color-picker, .size-picker {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+input[type="color"] {
+  width: 40px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  width: 100px;
+}
+
+#sizeValue {
+  min-width: 40px;
+  text-align: center;
+}
+
+.clear-btn {
+  padding: 8px 16px;
+  background-color: var(--color-surface);
+  color: var(--color-error);
+  border: 1px solid var(--color-error);
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-btn:hover {
+  background-color: var(--color-error);
+  color: white;
+}
+
+main {
+  flex: 1;
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#drawingCanvas {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: crosshair;
+}
+
+footer {
+  padding: var(--spacing-md);
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .brush-settings {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  .color-picker, .size-picker {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  input[type="range"] {
+    width: 60%;
+  }
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paint App </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>Sofia Herrerias Online Paint:3</h1>
+        <div class="toolbar">
+          <div class="brush-tools">
+            <button id="circularBrush" class="tool-btn active" title="Pincel Circular">
+              <span class="icon circular"></span>
+            </button>
+            <button id="squareBrush" class="tool-btn" title="Pincel Cuadrado">
+              <span class="icon square"></span>
+            </button>
+          </div>
+          <div class="brush-settings">
+            <div class="color-picker">
+              <label for="colorInput">Color:</label>
+              <input type="color" id="colorInput" value="#3B82F6">
+            </div>
+            <div class="size-picker">
+              <label for="sizeInput">Tamaño:</label>
+              <input type="range" id="sizeInput" min="1" max="50" value="10">
+              <span id="sizeValue">10px</span>
+            </div>
+          </div>
+          <button id="clearCanvas" class="clear-btn">Limpiar Canvas</button>
+        </div>
+      </header>
+      <main>
+        <canvas id="drawingCanvas"></canvas>
+      </main>
+      <footer>
+        <p>Noob Paint App</p>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
